@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-datalogic-integration-turbo';
+import { multiply } from '../../src/index';
 
 const result = multiply(3, 7);
 

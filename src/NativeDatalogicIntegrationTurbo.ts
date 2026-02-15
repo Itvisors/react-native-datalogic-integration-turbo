@@ -4,4 +4,5 @@ export interface Spec extends TurboModule {
   multiply(a: number, b: number): number;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('DatalogicIntegrationTurbo');
+// No getEnforcing to avoid build issues on iOS
+export default TurboModuleRegistry.get<Spec>('DatalogicIntegrationTurbo');
