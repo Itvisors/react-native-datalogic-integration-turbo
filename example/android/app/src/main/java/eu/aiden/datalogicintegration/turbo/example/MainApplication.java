@@ -1,4 +1,4 @@
-package datalogicintegrationturbo.example;
+package eu.aiden.datalogicintegration.turbo.example;
 
 import android.app.Application;
 
