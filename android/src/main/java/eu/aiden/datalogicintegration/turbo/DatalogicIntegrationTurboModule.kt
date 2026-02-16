@@ -1,6 +1,6 @@
 package eu.aiden.datalogicintegration.turbo
 
-import com.datalogicintegrationturbo.NativeDatalogicIntegrationTurboSpec
+import eu.aiden.datalogicintegration.turbo.NativeDatalogicIntegrationTurboSpec
 import com.facebook.react.bridge.ReactApplicationContext
 
 class DatalogicIntegrationTurboModule(reactContext: ReactApplicationContext) :

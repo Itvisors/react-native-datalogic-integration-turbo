@@ -45,12 +45,10 @@
   },
   "author": "Marcel Groeneweg <mgroeneweg@users.noreply.github.com> (https://github.com/mgroeneweg)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/itvisors/react-native-datalogic-integration-turbo/issues"
-  },
   "homepage": "https://github.com/itvisors/react-native-datalogic-integration-turbo#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@eslint/compat": "^1.3.2",
@@ -103,7 +101,7 @@
     "type": "modules",
     "jsSrcsDir": "src",
     "android": {
-      "javaPackageName": "com.datalogicintegrationturbo"
+      "javaPackageName": "eu.aiden.datalogicintegration.turbo"
     }
   },
   "release-it": {
