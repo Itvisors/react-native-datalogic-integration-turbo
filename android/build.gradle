@@ -64,4 +64,5 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-android"
+  implementation "com.github.datalogic:datalogic-android-sdk:v1.47"
 }
