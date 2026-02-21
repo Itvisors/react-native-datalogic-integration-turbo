@@ -1,12 +1,48 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from '../../src/index';
-
-const result = multiply(3, 7);
+import {
+  startReadListener,
+  stopReadListener,
+  getEventBarcodeValueScanned,
+} from 'react-native-datalogic-integration-turbo';
+import { Text, View, StyleSheet, Button, NativeEventEmitter, NativeModules } from 'react-native';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+  const [listenerActive, setListenerActive] = useState<boolean>(false);
+  const [scannedValue, setScannedValue] = useState<string | undefined>();
+
+  useEffect(() => {
+    const eventEmitter = new NativeEventEmitter(NativeModules.DatalogicIntegration);
+    let eventListener = eventEmitter.addListener(getEventBarcodeValueScanned(), (event) => {
+      setScannedValue(event.scannedValue);
+    });
+
+    // Removes the listener once unmounted
+    return () => {
+      eventListener.remove();
+    };
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text style={styles.textStyle}>Listener active: {listenerActive ? 'yes' : 'no'}</Text>
+      <Text style={styles.textStyle}>Scanned value: {scannedValue}</Text>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Start listener"
+          onPress={() => {
+            setScannedValue('');
+            startReadListener();
+            setListenerActive(true);
+          }}
+        />
+        <Button
+          title="Stop listener"
+          onPress={() => {
+            stopReadListener();
+            setListenerActive(false);
+          }}
+        />
+      </View>
     </View>
   );
 }
@@ -14,7 +50,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 50,
+    paddingHorizontal: 10,
+    backgroundColor: 'black',
+  },
+  buttonContainer: {
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  textStyle: {
+    color: 'white',
   },
 });
