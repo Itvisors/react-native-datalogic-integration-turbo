@@ -1,5 +1,5 @@
 {
-  "name": "react-native-datalogic-integration-turbo",
+  "name": "@aidenlowcode/react-native-datalogic-integration-turbo",
   "version": "1.0.0",
   "description": "React Native DataLogic integration for New Architecture",
   "main": "./lib/module/index.js",

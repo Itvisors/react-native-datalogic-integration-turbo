@@ -2,7 +2,7 @@ import {
   startReadListener,
   stopReadListener,
   getEventBarcodeValueScanned,
-} from 'react-native-datalogic-integration-turbo';
+} from '@aidenlowcode/react-native-datalogic-integration-turbo';
 import { Text, View, StyleSheet, Button, NativeEventEmitter, NativeModules } from 'react-native';
 import { useEffect, useState } from 'react';
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-datalogic-integration-turbo": ["./src/index"]
+      "@aidenlowcode/react-native-datalogic-integration-turbo": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
