@@ -16,7 +16,7 @@ npm install @aidenlowcode/react-native-datalogic-integration-turbo
 ## Usage
 
 ```js
-import { startReadListener, stopReadListener, EVENT_BARCODE_VALUE_SCANNED } from '@aidenlowcode/react-native-datalogic-integration-turbo';
+import { startReadListener, stopReadListener, getEventBarcodeValueScanned } from '@aidenlowcode/react-native-datalogic-integration-turbo';
 
 // Start the listener
 startReadListener();
@@ -24,7 +24,7 @@ startReadListener();
 // Receive scanned value
   useEffect(() => {
     const eventEmitter = new NativeEventEmitter(NativeModules.DatalogicIntegrationTurbo);
-    let eventListener = eventEmitter.addListener(EVENT_BARCODE_VALUE_SCANNED, (event) => {
+    let eventListener = eventEmitter.addListener(getEventBarcodeValueScanned(), (event) => {
       console.log(event.scannedValue);
     });
 
@@ -39,13 +39,6 @@ stopReadListener();
 ```
 
 Take care to stop the listener when the app is backgrounded or closed
-
-
-## Contributing
-
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
