@@ -4,18 +4,21 @@
   "description": "React Native DataLogic integration for New Architecture",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
+  "react-native": "./lib/module/index.js",
   "exports": {
     ".": {
-      "source": "./src/index.ts",
+      "react-native": "./src/index.ts",
       "types": "./lib/typescript/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
+    "./react-native.config.js": "./react-native.config.js",
     "./package.json": "./package.json"
   },
   "files": [
     "src",
     "lib",
     "android",
+    "cpp",
     "react-native.config.js",
     "!android/build",
     "!android/gradle",
