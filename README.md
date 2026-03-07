@@ -23,9 +23,9 @@ startReadListener();
 
 // Receive scanned value
   useEffect(() => {
-    const eventEmitter = new NativeEventEmitter(NativeModules.DatalogicIntegrationTurbo);
+    const eventEmitter = new NativeEventEmitter(NativeModules.DatalogicIntegration);
     let eventListener = eventEmitter.addListener(getEventBarcodeValueScanned(), (event) => {
-      console.log(event.scannedValue);
+      setScannedValue(event.scannedValue);
     });
 
     // Removes the listener once unmounted

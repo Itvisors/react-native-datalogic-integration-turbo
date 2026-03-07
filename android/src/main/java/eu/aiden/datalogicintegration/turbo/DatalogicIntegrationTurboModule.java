@@ -33,11 +33,6 @@ public class DatalogicIntegrationTurboModule extends NativeDatalogicIntegrationT
     this.reactContext = reactContext;
   }
 
-  @Override
-  public double multiply(double a, double b) {
-    return a * b;
-  }
-
   private void sendEvent(ReactContext reactContext,
                          String eventName,
                          @Nullable WritableMap params) {
